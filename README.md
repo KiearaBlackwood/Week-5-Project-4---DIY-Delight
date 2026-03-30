@@ -38,8 +38,7 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
-
+[Kap] (https://github.com/user-attachments/assets/b33cca51-8131-45b6-b654-7cf62c510f7d)
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  GIF tool here
