@@ -42,8 +42,7 @@ The following **additional** features are implemented:
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  GIF tool here
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS  -->
+[imgur](https://imgur.com/a/wwsUn46) 
 
 ## Notes
 
