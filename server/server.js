@@ -2,35 +2,27 @@ import express from 'express'
 import path from 'path'
 import favicon from 'serve-favicon'
 import dotenv from 'dotenv'
+import carRouter from './routes/cars.js'
+import { fileURLToPath } from 'url' 
 
-// import the router from your routes file
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+dotenv.config({ path: path.resolve(__dirname, '.env') })
 
-dotenv.config()
-
-const PORT = process.env.PORT || 3000
-
+const PORT = process.env.PORT || 3001
 const app = express()
 
 app.use(express.json())
 
-if (process.env.NODE_ENV === 'development') {
-    app.use(favicon(path.resolve('../', 'client', 'public', 'lightning.png')))
-}
-else if (process.env.NODE_ENV === 'production') {
-    app.use(favicon(path.resolve('public', 'lightning.png')))
-    app.use(express.static('public'))
-}
-
-// specify the api path for the server to use
-
+app.use('/api', carRouter)
 
 if (process.env.NODE_ENV === 'production') {
     app.get('/*', (_, res) =>
-        res.sendFile(path.resolve('public', 'index.html'))
+        res.sendFile(path.resolve(__dirname, 'public/index.html'))
     )
 }
 
-app.listen(PORT, () => {
-    console.log(`server listening on http://localhost:${PORT}`)
+app.listen(PORT, '127.0.0.1', () => {
+    console.log(`🚀 Server listening on http://127.0.0.1:${PORT}`)
 })
